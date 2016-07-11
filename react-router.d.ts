@@ -1,4 +1,4 @@
-/// <reference path="typings/main.d.ts" />
+/// <reference path="typings/index.d.ts" />
 
 import * as React from "react";
 import {LocationDescriptor, Query, Location, History, HistoryOptions, CreateHistory, BasenameOptions, QueryOptions} from "history";
@@ -60,7 +60,7 @@ declare module ReactRouter {
 		 * @param {Components<IProps, any>} component
 		 * @param {IProps} props
 		 */
-		createElement?<IProps>(component: ReactComponent<IProps>, props: IProps): JSX.Element;
+		createElement?<IProps>(component: ReactComponent<IProps>, props: IProps): React.ReactElement<any>;
 
 		/**
 		 * A function used to convert an object from <Link>s or calls to transitionTo to a URL query string.
@@ -93,7 +93,7 @@ declare module ReactRouter {
 		 * This is primarily for integrating with other libraries that need to participate in rendering before the route components are rendered. It defaults to render={(props) => <RouterContext {...props} />}.
 		 * Ensure that you render a <RouterContext> at the end of the line, passing all the props passed to render.
 		 */
-		render?<IProps>(props: IProps): JSX.Element;
+		render?<IProps>(props: IProps): React.ReactElement<any>;
 	}
 
 
